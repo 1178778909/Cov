@@ -99,6 +99,7 @@ function get_r2_data(){
 }
 
 gettime()
+get_c1_data()
 get_l1_data()
 get_l2_data()
 get_r1_data()

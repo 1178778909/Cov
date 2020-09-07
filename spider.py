@@ -1,4 +1,5 @@
 import json
+import sys
 import time
 import requests
 import pymysql
@@ -178,4 +179,22 @@ def update_hotsearch():
         close_conn(conn, cursor)
 
 if __name__ == "__main__":
-    get_baidu_hot()
+    l = len(sys.argv)
+    if l == l:
+        s = """
+        请输入参数
+        参数说明：
+        up_his 更新历史记录表
+        up_hot 更新实时热搜
+        up_det 更新详细表
+        """
+
+        print(s)
+    else:
+        order = sys.argv[1]
+        if order == "up_his":
+            update_history()
+        elif  order == "up_hot":
+            update_hotsearch()
+        elif order == "up_det":
+            update_details()
